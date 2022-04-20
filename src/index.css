@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.btn {
+		@apply cursor-pointer bg-vibrant_green p-2 rounded-2xl hover:shadow-md active:shadow-none active:translate-y-1 transition-all duration-200;
+	}
+
+	.btnErr {
+		@apply cursor-pointer bg-[#F2E9E7A8] p-2 rounded-2xl text-[#FF4034];
+	}
+}
+
+@font-face {
+	font-family: 'RMS-Sanz';
+	src: url('/src/font/RNSSanz-Normal.otf');
+}
+@font-face {
+	font-family: 'RMS-Sanz-Bold';
+	src: url('/src/font/RNSSanz-Bold.otf');
+}
+
+.dots-9:before,
+.dots-9:after {
+	content: '';
+	width: 12px;
+	height: 12px;
+	grid-area: 1/1;
+	margin: auto;
+	border-radius: 50%;
+	transform-origin: -12px 50%;
+	background: currentColor;
+	animation: d9 1s infinite linear;
+}
+.dots-9:after {
+	transform-origin: calc(100% + 12px) 50%;
+	--s: -1;
+	animation-delay: -0.5s;
+}
+
+@keyframes d9 {
+	58%,
+	100% {
+		transform: rotate(calc(var(--s, 1) * 1turn));
+	}
+}
+
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
