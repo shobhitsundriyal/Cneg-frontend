@@ -1,4 +1,3 @@
-import React from 'react'
 import EnvironmentHero from '../components/Mint/EnvironmentHero'
 import FaqSection from '../components/Mint/FaqSection'
 import HowItWorks from '../components/Mint/HowItWorks'
@@ -8,8 +7,8 @@ function Mint() {
 	return (
 		<div className=' space-y-10'>
 			<MintArea />
+			<EnvironmentHero />
 			<HowItWorks />
-			{/* <EnvironmentHero /> */}
 			<FaqSection />
 		</div>
 	)

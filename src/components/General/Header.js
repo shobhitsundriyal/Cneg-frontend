@@ -16,6 +16,7 @@ function Header() {
 			if (account) {
 				setCurrentAccount(account)
 				isWalletConnected.updateState(true)
+				isWalletConnected.setWalletAddress(account)
 			}
 		}
 		setAccount()

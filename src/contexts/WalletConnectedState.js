@@ -6,8 +6,11 @@ const WalletConnetedState = (props) => {
 	const updateState = (val) => {
 		setState(val)
 	}
+	const [walletAddress, setWalletAddress] = useState()
 	return (
-		<WalletConnectedContext.Provider value={{ state, updateState }}>
+		<WalletConnectedContext.Provider
+			value={{ state, updateState, walletAddress, setWalletAddress }}
+		>
 			{props.children}
 		</WalletConnectedContext.Provider>
 	)

@@ -1,5 +1,8 @@
 import { useState, useEffect, useContext } from 'react'
 import switchIcon from '../../icons/switch.svg'
+import switchMirageIcon from '../../icons/switchMirage.svg'
+import fireIcon from '../../icons/fireIcon.svg'
+
 import { Transition } from '@tailwindui/react'
 import {
 	checkMetamaskConnected,
@@ -9,10 +12,12 @@ import walletConnectedContext from '../../contexts/WalletConnectedContext'
 import Loader from '../General/Loader'
 import { ethers } from 'ethers'
 import { contractAddress, contractABI } from '../../Contract/contractDetails'
+import IsMintedContext from '../../contexts/IsMintedContext'
 
 function MintArea() {
 	const [isConnected, setIsConnected] = useState(false)
 	const isWalletConnected = useContext(walletConnectedContext)
+	const isMintedContext = useContext(IsMintedContext)
 
 	useEffect(() => {
 		// can be done using global state but for this app its fine
@@ -27,8 +32,31 @@ function MintArea() {
 	}, [])
 
 	useEffect(() => {
+		async function checkIfMinted() {
+			try {
+				const { ethereum } = window //from metamask
+				const provider = new ethers.providers.Web3Provider(ethereum)
+				const signer = provider.getSigner()
+				const connectedContract = new ethers.Contract(
+					contractAddress,
+					contractABI,
+					signer
+				)
+				const currAddress = await signer.getAddress()
+				await connectedContract
+					.isMinted(currAddress)
+					.then((resp) => isMintedContext.updateState(resp))
+			} catch (error) {
+				console.log(error, 'error while checking is minted?')
+			}
+		}
+
+		//
 		console.log('walletConnected: ', isWalletConnected.state)
-	}, [])
+		if (isWalletConnected.state) {
+			checkIfMinted()
+		}
+	}, [isWalletConnected.state])
 
 	const howToMint = () => {
 		return (
@@ -164,7 +192,7 @@ function MintArea() {
 
 				setIsLoading(true)
 				const toAddress = await signer.getAddress()
-				const cost = ethers.utils.parseEther('0.10001')
+				const cost = ethers.utils.parseEther('0.0065')
 				const options = { value: cost }
 				let url =
 					'https://firebasestorage.googleapis.com/v0/b/ji-drive.appspot.com/o/Files%2FWhatsApp%20Image%202022-04-16%20at%207.50.25%20AM.jpeg?alt=media&token=e27ee681-2974-4231-86e8-fae9720c3928'
@@ -178,6 +206,7 @@ function MintArea() {
 				await mintTxn.wait()
 				if (mintTxn) {
 					//update already minted values
+					isMintedContext.updateState(true)
 					console.log(
 						`minted: https://mumbai.polygonscan.com/tx/${mintTxn.hash}`
 					)
@@ -197,7 +226,7 @@ function MintArea() {
 			<Transition
 				// show={isConnected}
 				show={isWalletConnected.state}
-				enter='transition-opacity duration-50 delay-150'
+				enter='transition-opacity duration-75 delay-150'
 				enterFrom='opacity-0'
 				enterTo='opacity-100'
 			>
@@ -363,32 +392,90 @@ function MintArea() {
 			</div>
 
 			{/**right side */}
-			<div className='md:w-[50%] w-full py-5 flex flex-col justify-between md:pl-[5%] md:space-y-0 space-y-5'>
-				<div className=' w-max bg-mirage text-white px-3 py-2 rounded-lg text-[0.7rem] 1016px:text-[.8rem]'>
-					{' '}
-					MINT NOW LIVE
-				</div>
+			{isMintedContext.state ? (
+				<div className='md:w-[50%] w-full py-5 flex flex-col md:pl-[5%] justify-between'>
+					<div className='rounded-lg 1016px:text-6xl text-4xl font-rmsBold leading-[110%] mt-16'>
+						{' '}
+						You own 1 CNEG Genesis NFT
+					</div>
 
-				<div className=' w-max rounded-lg 1016px:text-6xl text-4xl font-rmsBold leading-[110%]'>
-					{' '}
-					1 CNEG Genesis
-					<br /> NFT
-				</div>
+					<div className='rounded-lg 1016px:text-xl text-base font-extralight 1016px:leading-[150%] leading-[100%] py-3 1016px:py-0'>
+						Owner Address:{' '}
+						<span className=' text-purple-500'>
+							{isWalletConnected.walletAddress.slice(0, 10) +
+								'....'}
+						</span>
+					</div>
 
-				<div className=' w-max rounded-lg 1016px:text-xl text-base font-rmsBold '>
-					Price: 1250 BCT
-				</div>
+					{/** 2 box cotainers */}
+					<div className=' bg-[#C5B7EE52] h-16 md:h-[15%] rounded-xl flex items-center mt-10'>
+						{/** image */}
+						<div className=' h-full aspect-1 p-4 md:p-6'>
+							<img src={fireIcon} />
+						</div>
+						<div className=' ml-4 space-y-1'>
+							<div className='1016px:text-xl text-base font-rmsBold'>
+								1000/10000
+							</div>
+							<div>Carbon credits burnt</div>
+						</div>
+					</div>
 
-				<div className='rounded-lg 1016px:text-xl text-base font-extralight 1016px:leading-[150%] leading-[100%] py-3 1016px:py-0'>
-					1CNEG Genesis NFT helps you burn 1250 BCT tokens valid upto
-					2 years and becom carbon negative
-				</div>
+					<div className=' bg-[#C5B7EE52] h-16 md:h-[15%] rounded-xl flex items-center mt-5'>
+						{/** image */}
+						<div className=' h-full aspect-1 p-2 pl-3 md:p-3 md:pl-5 flex'>
+							<img
+								src={switchMirageIcon}
+								className=' rotate-45'
+							/>
+						</div>
+						<div className=' ml-4 space-y-1'>
+							<div className='1016px:text-xl text-base font-rmsBold'>
+								12 Tonnes
+							</div>
+							<div>Carbon offset</div>
+						</div>
+					</div>
 
-				{/** How to Mint / other states */}
-				{/* {!isConnected ? howToMint() : numberMint()} */}
-				{howToMint()}
-				{NumberMint()}
-			</div>
+					<div className='rounded-lg 1016px:text-xl text-base font-extralight 1016px:leading-[150%] leading-[100%] py-3 1016px:py-0'>
+						Smart contract:{' '}
+						<a
+							href='https://polygonscan.com/'
+							target='_blank'
+							className=' text-purple-500'
+						>
+							View on Polyscan
+						</a>
+					</div>
+				</div>
+			) : (
+				<div className='md:w-[50%] w-full py-5 flex flex-col justify-between md:pl-[5%] md:space-y-0 space-y-5'>
+					<div className=' w-max bg-mirage text-white px-3 py-2 rounded-lg text-[0.7rem] 1016px:text-[.8rem]'>
+						{' '}
+						MINT NOW LIVE
+					</div>
+
+					<div className=' w-max rounded-lg 1016px:text-6xl text-4xl font-rmsBold leading-[110%]'>
+						{' '}
+						1 CNEG Genesis
+						<br /> NFT
+					</div>
+
+					<div className=' w-max rounded-lg 1016px:text-xl text-base font-rmsBold '>
+						Price: 1250 BCT
+					</div>
+
+					<div className='rounded-lg 1016px:text-xl text-base font-extralight 1016px:leading-[150%] leading-[100%] py-3 1016px:py-0'>
+						1CNEG Genesis NFT helps you burn 1250 BCT tokens valid
+						upto 2 years and becom carbon negative
+					</div>
+
+					{/** How to Mint / other states */}
+					{/* {!isConnected ? howToMint() : numberMint()} */}
+					{howToMint()}
+					<NumberMint />
+				</div>
+			)}
 		</div>
 	)
 }
