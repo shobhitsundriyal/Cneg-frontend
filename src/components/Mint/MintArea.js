@@ -2,7 +2,6 @@ import { useState, useEffect, useContext } from 'react'
 import switchIcon from '../../icons/switch.svg'
 import switchMirageIcon from '../../icons/switchMirage.svg'
 import fireIcon from '../../icons/fireIcon.svg'
-
 import { Transition } from '@tailwindui/react'
 import {
 	checkMetamaskConnected,
@@ -408,9 +407,9 @@ function MintArea() {
 					</div>
 
 					{/** 2 box cotainers */}
-					<div className=' bg-[#C5B7EE52] h-16 md:h-[15%] rounded-xl flex items-center mt-10'>
+					<div className=' bg-[#C5B7EE52] h-[4.5rem] md:h-[15%] rounded-xl flex items-center mt-16'>
 						{/** image */}
-						<div className=' h-full aspect-1 p-4 md:p-6'>
+						<div className=' h-full aspect-1 p-5 md:p-6'>
 							<img src={fireIcon} />
 						</div>
 						<div className=' ml-4 space-y-1'>
@@ -421,9 +420,9 @@ function MintArea() {
 						</div>
 					</div>
 
-					<div className=' bg-[#C5B7EE52] h-16 md:h-[15%] rounded-xl flex items-center mt-5'>
+					<div className=' bg-[#C5B7EE52] h-[4.5rem] md:h-[15%] rounded-xl flex items-center mt-5'>
 						{/** image */}
-						<div className=' h-full aspect-1 p-2 pl-3 md:p-3 md:pl-5 flex'>
+						<div className=' h-full aspect-1 p-3 pl-3 md:p-3 md:pl-5 flex'>
 							<img
 								src={switchMirageIcon}
 								className=' rotate-45'
