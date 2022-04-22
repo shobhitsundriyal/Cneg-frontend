@@ -10,6 +10,8 @@ module.exports = {
 				lavender: '#c5b7ee',
 				vibrant_green: '#c1ed1c',
 				daen_pink: '#f2e9e7',
+				light_pink: '#F9F5F4',
+				dark_bg: '#090910',
 			},
 			fontFamily: {
 				rms: ['RMS-Sanz', 'sans-serif'],
