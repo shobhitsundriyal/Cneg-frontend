@@ -2,6 +2,12 @@ import logoWhite from '../icons/LandingPageAssests/logoWhite.svg'
 import earth from '../icons/LandingPageAssests/earth.svg'
 import sideDoodle from '../icons/LandingPageAssests/sideDoodle.svg'
 import sec2group from '../icons/LandingPageAssests/section2mainGroup.svg'
+import littleGlobe from '../icons/LandingPageAssests/littleGlobe.svg'
+import section4Image from '../icons/LandingPageAssests/section4Image.svg'
+import wave1 from '../icons/LandingPageAssests/wave1.svg'
+import wave2 from '../icons/LandingPageAssests/wave2.svg'
+import lineCloud from '../icons/LandingPageAssests/lineCloud.svg'
+import sunSpike from '../icons/LandingPageAssests/sunSpike.svg'
 import logoOnlyWhite from '../icons/LandingPageAssests/logoOnlyWhiteNobg.png'
 
 import baseCarbon from '../icons/LandingPageAssests/baseCarbon.png'
@@ -9,6 +15,7 @@ import StepsBubble from '../components/LandingPage/SetpsBubble'
 import solidCloudGroup from '../icons/LandingPageAssests/solidCloudGroup.svg'
 import dropping from '../icons/LandingPageAssests/dropping.svg'
 import FaqSection from '../components/Mint/FaqSection'
+import { CheckCircleIcon } from '@heroicons/react/solid'
 
 function LandingPage() {
 	const arr = new Array(50).fill(0)
@@ -65,10 +72,9 @@ function LandingPage() {
 					<div className=' text-6xl font-rmsBold w-min leading-[110%] mt-10'>
 						What is a Cnegative NFT?
 					</div>
-					<img
-						src={sec2group}
-						className=' h-max aspect-[0.8] w-max ml-20'
-					/>
+					<div className='w-[100vw] aspect-[5/6] ml-10'>
+						<img src={sec2group} className=' h-max' />
+					</div>
 
 					<div className=' text-lg leading-[160%] mb-12 mt-auto tracking-wider'>
 						A C-negative NFT allows you to purchase carbon credits
@@ -116,14 +122,29 @@ function LandingPage() {
 			</div>
 
 			{/** Setction 3 */}
-			<div className=' mx-auto px-2 pb-5 font-rms relative text-mirage mt-60 bg-daen_pink overflow-hidden'>
-				{/** absolute things */}
-				<div className='w-[12%] absolute -top-20 -z-10 left-[45%] aspect-1 bg-yellow-400 rounded-full'></div>
-				{/** jugaad */}
-				<div className='bg-lavender text-7xl leading-[120%] text-center font-rmsBold text-white tracking-wider'>
-					BECOME A PLANET HERO
-				</div>
-
+			{/** absolute things */}
+			<div className='relative h-[17vw] overflw-hidden mt-80'>
+				<img src={wave1} alt='' />
+				<img src={wave2} alt='' className=' absolute top-[34%]' />
+				<img
+					src={lineCloud}
+					alt=''
+					className=' absolute -top-[25%] left-[5%] w-[17vw]'
+				/>
+				<img
+					src={sunSpike}
+					alt=''
+					className=' absolute -top-[58%] left-[42%] w-[13vw]'
+				/>
+				<img
+					src={lineCloud}
+					alt=''
+					className=' absolute top-[15%] right-[5%] w-[12vw]'
+					style={{ transform: 'rotateY(180deg)' }}
+				/>
+				<div className='w-[17%] absolute -top-[29%] -z-10 left-[40%] aspect-1 bg-[#FFD600] rounded-full'></div>
+			</div>
+			<div className=' mx-auto px-2 pb-5 font-rms relative text-mirage mt- bg-daen_pink overflow-hidden'>
 				{/** flex */}
 				<div className='flex container mt-20 mb-4'>
 					{/** left side */}
@@ -157,7 +178,8 @@ function LandingPage() {
 				<div className=' bg-vibrant_green w-max absolute z-20 -bottom-0 -left-6'>
 					{arr.map((item, i) => (
 						<span className=' font-rmsBold' key={i}>
-							CNEGATIVE GENESIS &nbsp;X&nbsp;&nbsp;
+							CNEGATIVE GENESIS &nbsp;
+							<span className=' text-lg'>X</span>&nbsp;&nbsp;
 						</span>
 					))}
 				</div>
@@ -165,13 +187,44 @@ function LandingPage() {
 
 			{/** Section 4 */}
 			<div className='container text-mirage'>
-				(flex left image, right cneg)
+				<div className='flex'>
+					{/** left side picture */}
+					<div className='w-[49%] aspect-[10/11] bg-sate-500 flex items-center justify-center relative'>
+						<div className='absolute bg-light_pink h-[70%] w-[50%] rounded-3xl mr-[16%] mb-[2%] -z-10'></div>
+						<img
+							src={section4Image}
+							alt='noImg'
+							className='h-[90%]'
+						/>
+					</div>
+					{/** right side info */}
+					<div className='w-[49%] flex flex-col items-center justify-evenly'>
+						<div className='text-6xl font-rmsBold ml-[8%] leading-[110%]'>
+							The Cnegative Genesis NFT
+						</div>
+						<div className='text-lg space-y-3'>
+							<div className='flex items-center'>
+								<CheckCircleIcon className='h-8 text-lavender mr-[2%]' />
+								Be a part of the C-negative DAO{' '}
+							</div>
+							<div className='flex items-center'>
+								<CheckCircleIcon className='h-8 text-lavender mr-[2%]' />
+								Become carbon neutral for 10 years
+							</div>
+							<div className='flex items-center'>
+								<CheckCircleIcon className='h-8 text-lavender mr-[2%]' />
+								Participate in the development of verified
+								climate projects
+							</div>
+						</div>
+					</div>
+				</div>
 				{/** Our Partners */}
-				<div className=' font-rmsBold'>
+				<div className=' font-rmsBold mt-10'>
 					<div className='text-6xl text-center'>Our Partners</div>
-					<div className='flex bg-light_pink rounded-2xl p-8 mt-8'>
+					<div className='flex bg-light_pink rounded-2xl p-8 mt-8 overflow-x-auto snap-x snap-mandatory'>
 						{/** left side */}
-						<div className='w-[50%] flex flex-col items-center space-y-5 border-r-2'>
+						<div className='min-w-[25rem] snap-center md:w-[50%] flex flex-col items-center space-y-5 border-r-2'>
 							<div className='text-4xl'>market</div>
 							<div className=' font-rms text-center px-10'>
 								Market is a permisionless Defi protocol that
@@ -185,7 +238,7 @@ function LandingPage() {
 							</div>
 						</div>
 						{/** right side */}
-						<div className='w-[50%] flex flex-col items-center space-y-5 border-r-2'>
+						<div className=' min-w-[350px] snap-center md:w-[50%] flex flex-col items-center space-y-5'>
 							<div className='text-4xl font-rms'>
 								<span className=' font-semibold'>GRAVIKY </span>
 								<span>Labs</span>
@@ -228,8 +281,13 @@ function LandingPage() {
 				</div>
 				<div className=' bg-lavender w-max absolute z-20 -bottom-0 -left-48'>
 					{arr.map((item, i) => (
-						<span className=' font-rmsBold text-black' key={i}>
-							LET'S SAVE THE PLANET TOGETHER &nbsp;&nbsp;🌐&nbsp;
+						<span
+							className=' font-rmsBold text-black items-center inline-flex'
+							key={i}
+						>
+							LET'S SAVE THE PLANET TOGETHER &nbsp;&nbsp;
+							<img src={littleGlobe} className='inline' />
+							&nbsp;&nbsp;
 						</span>
 					))}
 				</div>
