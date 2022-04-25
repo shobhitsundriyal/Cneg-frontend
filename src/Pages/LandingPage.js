@@ -103,18 +103,18 @@ function LandingPage() {
 						<div className='w-[70%] sm:w-[50%] aspect-5 bg-white'></div>
 					</div>
 
-					<div className='w-[49.5%] bg-mirage flex items-center p-4 sm:p-6 1016px:p-8 rounded-2xl text-[1.185rem] sm:text-3xl md:text-4xl 1016px:text-5xl'>
+					<div className='w-[49.5%] bg-mirage flex items-center p-4 px-2 sm:p-6 1016px:p-8 rounded-2xl text-[1.1rem] sm:text-3xl md:text-4xl 1016px:text-5xl'>
 						<div className=' bg-lavender p-1 md:p-3 1016px:p-5 rounded-full border-2 border-white h-9 sm:h-14 md:h-16 1016px:h-20 aspect-1'>
 							<img src={logoOnlyWhite} />
 						</div>
-						<div className='ml-3 md:ml-8'>
+						<div className='ml-2 md:ml-8'>
 							1 Cnegative
 							<br /> token
 						</div>
 					</div>
 
-					<div className='w-[49.5%] bg-mirage flex items-center p-4 sm:p-6 1016px:p-8 rounded-2xl justify-end text-[1.185rem] sm:text-3xl md:text-4xl 1016px:text-5xl	'>
-						<div className='mr-3 md:mr-8 text-right'>
+					<div className='w-[49.5%] bg-mirage flex items-center p-4 px-2 sm:p-6 1016px:p-8 rounded-2xl justify-end text-[1.1rem] sm:text-3xl md:text-4xl 1016px:text-5xl	'>
+						<div className='mr-2 md:mr-8 text-right'>
 							96 Base
 							<br /> Carbon Tonne
 						</div>
