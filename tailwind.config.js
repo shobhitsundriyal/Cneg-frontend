@@ -20,7 +20,7 @@ module.exports = {
 			keyframes: {
 				moveSide: {
 					'0%': { transform: 'translateX(0rem)' },
-					'100%': { transform: 'translateX(-70rem)' },
+					'100%': { transform: 'translateX(-90rem)' },
 				},
 			},
 			animation: {

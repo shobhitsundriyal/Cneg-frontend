@@ -103,8 +103,8 @@ function LandingPage() {
 						<div className='w-[70%] sm:w-[50%] aspect-5 bg-white'></div>
 					</div>
 
-					<div className='w-[49.5%] bg-mirage flex items-center p-4 sm:p-6 1016px:p-8 rounded-2xl text-xl sm:text-3xl md:text-4xl 1016px:text-5xl'>
-						<div className=' bg-lavender p-2 md:p-3 1016px:p-5 rounded-full border-2 border-white h-11 sm:h-14 md:h-16 1016px:h-20 aspect-1'>
+					<div className='w-[49.5%] bg-mirage flex items-center p-4 sm:p-6 1016px:p-8 rounded-2xl text-[1.185rem] sm:text-3xl md:text-4xl 1016px:text-5xl'>
+						<div className=' bg-lavender p-1 md:p-3 1016px:p-5 rounded-full border-2 border-white h-9 sm:h-14 md:h-16 1016px:h-20 aspect-1'>
 							<img src={logoOnlyWhite} />
 						</div>
 						<div className='ml-3 md:ml-8'>
@@ -113,12 +113,12 @@ function LandingPage() {
 						</div>
 					</div>
 
-					<div className='w-[49.5%] bg-mirage flex items-center p-4 sm:p-6 1016px:p-8 rounded-2xl justify-end text-xl sm:text-3xl md:text-4xl 1016px:text-5xl	'>
+					<div className='w-[49.5%] bg-mirage flex items-center p-4 sm:p-6 1016px:p-8 rounded-2xl justify-end text-[1.185rem] sm:text-3xl md:text-4xl 1016px:text-5xl	'>
 						<div className='mr-3 md:mr-8 text-right'>
 							96 Base
 							<br /> Carbon Tonne
 						</div>
-						<div className=' bg-lavender rounded-full h-11 sm:h-14 md:h-16 1016px:h-20 aspect-1'>
+						<div className=' bg-lavender rounded-full h-9 sm:h-14 md:h-16 1016px:h-20 aspect-1'>
 							<img src={baseCarbon} className='rounded-full' />
 						</div>
 					</div>
@@ -139,7 +139,7 @@ function LandingPage() {
 
 			{/** Setction 3 */}
 			{/** absolute things */}
-			<div className='relative h-[17vw] overflw-hidden mt-80'>
+			<div className='relative h-[17vw] overflw-hidden mt-40 sm:mt-80'>
 				<img src={wave1} alt='' />
 				<img src={wave2} alt='' className=' absolute top-[34%]' />
 				<img
@@ -193,9 +193,12 @@ function LandingPage() {
 				<img src={solidCloudGroup} className='w-[40vw]' />
 				<div className=' bg-vibrant_green w-max absolute z-20 -bottom-0 -left-6 animate-moveSide'>
 					{arr.map((item, i) => (
-						<span className=' font-rmsBold' key={i}>
+						<span
+							className=' font-rmsBold text-sm sm:text-base'
+							key={i}
+						>
 							CNEGATIVE GENESIS &nbsp;
-							<span className=' text-sm sm:text-lg'>X</span>
+							<span className=' '>X</span>
 							&nbsp;&nbsp;
 						</span>
 					))}
