@@ -17,6 +17,15 @@ module.exports = {
 				rms: ['RMS-Sanz', 'sans-serif'],
 				rmsBold: ['RMS-Sanz-Bold', 'sans-serif'],
 			},
+			keyframes: {
+				moveSide: {
+					'0%': { transform: 'translateX(0rem)' },
+					'100%': { transform: 'translateX(-70rem)' },
+				},
+			},
+			animation: {
+				moveSide: 'moveSide 15s linear infinite',
+			},
 		},
 	},
 	plugins: [require('@tailwindcss/aspect-ratio')],

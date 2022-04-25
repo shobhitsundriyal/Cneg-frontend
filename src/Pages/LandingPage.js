@@ -34,13 +34,16 @@ function LandingPage() {
 						</button>
 					</div>
 					{/* main Area(hero section ) */}
-					<div className=' flex mt-[5%] h-[90%]'>
+					<div className=' sm:flex mt-[5%] h-[90%]'>
 						{/** height of hero area */}
 						{/* left side */}
 						<div className=' flex flex-col w-[50%] justify-around '>
 							<div className=' text-7xl font-rmsBold leading-[110%]'>
 								These NFTs are going to save the planet{'  '}
-								<img src={earth} className='inline' />
+								<img
+									src={earth}
+									className='inline animate-spin'
+								/>
 							</div>
 							<div className=' text-lg'>
 								With C-negative, you can buy carbon credits and
@@ -48,7 +51,7 @@ function LandingPage() {
 								with less permitted carbon emissions.
 							</div>
 							<div className='btn text-mirage font-rmsBold w-max p-3'>
-								Coming Soon...
+								Coming Soon
 							</div>
 						</div>
 						{/* right side */}
@@ -58,25 +61,34 @@ function LandingPage() {
 					</div>
 				</div>
 
-				<img src={sideDoodle} className='absolute -bottom-2 left-0' />
 				<img
 					src={sideDoodle}
-					className='absolute -bottom-2 right-0'
+					className='absolute -bottom-1 left-0 w-[14.5vw]'
+				/>
+				<img
+					src={sideDoodle}
+					className='absolute -bottom-1 right-0 w-[14.5vw]'
 					style={{ transform: 'rotateY(180deg)' }}
 				/>
 			</div>
 
 			{/** Section 2 */}
 			<div className=' mx-auto px-2 font-rms relative text-mirage'>
-				<div className='container mt-28 flex'>
-					<div className=' text-6xl font-rmsBold w-min leading-[110%] mt-10'>
+				<div className='container sm:mt-28 sm:flex'>
+					<div className='text-6xl font-rmsBold w-min leading-[110%] mt-10 text-center sm:text-left mx-auto md:w-fit lg:w-min'>
 						What is a Cnegative NFT?
+						<div className='text-lg leading-[160%] tracking-wider text-center sm:text-left hidden sm:block lg:hidden font-rms mt-20 ml-3'>
+							A C-negative NFT allows you to purchase carbon
+							credits on the blockchain and destroy them forever -
+							meaning, that the world has lesser amount of
+							permitted carbon emissions.
+						</div>
 					</div>
-					<div className='w-[100vw] aspect-[5/6] ml-10'>
+					<div className='w-[90vw] mx-auto my-4 sm:my-0 sm:w-[100vw] sm:aspect-[5/6] lg:ml-10'>
 						<img src={sec2group} className=' h-max' />
 					</div>
 
-					<div className=' text-lg leading-[160%] mb-12 mt-auto tracking-wider'>
+					<div className=' text-lg leading-[160%] mb-12 mt-auto tracking-wider text-center sm:text-left sm:hidden lg:block'>
 						A C-negative NFT allows you to purchase carbon credits
 						on the blockchain and destroy them forever - meaning,
 						that the world has lesser amount of permitted carbon
@@ -86,38 +98,42 @@ function LandingPage() {
 				{/** equivalant */}
 				<div className='container flex text-5xl justify-between text-white font-rmsBold mt-20 relative'>
 					{/** equals */}
-					<div className=' border-2 border-white aspect-1 h-[45%] text-center absolute rounded-full bg-mirage p-2 left-[47%] top-[25%]'>
-						{'='}
+					<div className=' border-2 border-white aspect-1 w-8 sm:w-[6%] text-center absolute rounded-full bg-mirage p-2 left-[47%] top-[29%] 1016px:top-[25%] flex flex-col items-center justify-evenly py-[1.5%]'>
+						<div className='w-[70%] sm:w-[50%] aspect-5 bg-white'></div>
+						<div className='w-[70%] sm:w-[50%] aspect-5 bg-white'></div>
 					</div>
 
-					<div className='w-[49.5%] bg-mirage flex items-center p-8 rounded-2xl'>
-						<div className=' bg-lavender p-5 rounded-full border-2 border-white h-20 w-20'>
+					<div className='w-[49.5%] bg-mirage flex items-center p-4 sm:p-6 1016px:p-8 rounded-2xl text-xl sm:text-3xl md:text-4xl 1016px:text-5xl'>
+						<div className=' bg-lavender p-2 md:p-3 1016px:p-5 rounded-full border-2 border-white h-11 sm:h-14 md:h-16 1016px:h-20 aspect-1'>
 							<img src={logoOnlyWhite} />
 						</div>
-						<div className='ml-8'>
+						<div className='ml-3 md:ml-8'>
 							1 Cnegative
 							<br /> token
 						</div>
 					</div>
 
-					<div className='w-[49.5%] bg-mirage flex items-center p-8 rounded-2xl justify-end'>
-						<div className='mr-8 text-right'>
+					<div className='w-[49.5%] bg-mirage flex items-center p-4 sm:p-6 1016px:p-8 rounded-2xl justify-end text-xl sm:text-3xl md:text-4xl 1016px:text-5xl	'>
+						<div className='mr-3 md:mr-8 text-right'>
 							96 Base
 							<br /> Carbon Tonne
 						</div>
-						<div className=' bg-lavender rounded-full h-20 w-20'>
+						<div className=' bg-lavender rounded-full h-11 sm:h-14 md:h-16 1016px:h-20 aspect-1'>
 							<img src={baseCarbon} className='rounded-full' />
 						</div>
 					</div>
 				</div>
 				{/** info */}
-				<div className='container pl-[40%] mt-8 leading-[160%] text-lg'>
-					*Base Carbon Tonnes (BCT) is a reference token representing
-					one tonne of carbon from the Verra Verified Carbon Unit
-					(VCU) registry from 2008 or later, bridged by the{' '}
-					<span className=' text-purple-400 underline'>
-						Toucan Protocol.
-					</span>
+				<div className='container'>
+					<div className='w-full sm:w-1/2 ml-auto mt-4 sm:mt-8 leading-[160%] text-base px-3 sm:text-lg'>
+						*Base Carbon Tonnes (BCT) is a reference token
+						representing one tonne of carbon from the Verra Verified
+						Carbon Unit (VCU) registry from 2008 or later, bridged
+						by the{' '}
+						<span className=' text-purple-400 underline'>
+							Toucan Protocol.
+						</span>
+					</div>
 				</div>
 			</div>
 
@@ -146,14 +162,14 @@ function LandingPage() {
 			</div>
 			<div className=' mx-auto px-2 pb-5 font-rms relative text-mirage mt- bg-daen_pink overflow-hidden'>
 				{/** flex */}
-				<div className='flex container mt-20 mb-4'>
+				<div className='sm:flex container mt-20 mb-4'>
 					{/** left side */}
-					<div className='text-6xl font-rmsBold w-[45%] leading-[110%]'>
+					<div className='text-6xl font-rmsBold sm:w-[45%] leading-[110%]'>
 						Saving the
 						<br /> planet as simple as 1,2,3
 					</div>
 					{/** right side */}
-					<div className=' flex flex-col w-[50%] ml-auto space-y-[5%]'>
+					<div className=' flex flex-col sm:w-[50%] ml-auto mt-8 sm:mt-0 space-y-8 sm:space-y-[5%]'>
 						<StepsBubble
 							title={'Buy'}
 							description={
@@ -174,8 +190,8 @@ function LandingPage() {
 						/>
 					</div>
 				</div>
-				<img src={solidCloudGroup} className=' bg-slate-' />
-				<div className=' bg-vibrant_green w-max absolute z-20 -bottom-0 -left-6'>
+				<img src={solidCloudGroup} className='w-[40vw]' />
+				<div className=' bg-vibrant_green w-max absolute z-20 -bottom-0 -left-6 animate-moveSide'>
 					{arr.map((item, i) => (
 						<span className=' font-rmsBold' key={i}>
 							CNEGATIVE GENESIS &nbsp;
@@ -264,7 +280,7 @@ function LandingPage() {
 						</div>
 						<a href={whitePaerLink} target='_blank'>
 							<div className='bg-white rounded-xl w-max text-base p-4 mt-4'>
-								Read Whitepaper
+								Read LitePaper
 							</div>
 						</a>
 					</div>
@@ -279,7 +295,7 @@ function LandingPage() {
 				<div className='container '>
 					<FaqSection />
 				</div>
-				<div className=' bg-lavender w-max absolute z-20 -bottom-0 -left-48'>
+				<div className=' bg-lavender w-max absolute z-20 -bottom-0 -left-48 animate-moveSide'>
 					{arr.map((item, i) => (
 						<span
 							className=' font-rmsBold text-black items-center inline-flex'
@@ -305,7 +321,7 @@ function LandingPage() {
 						target='_blank'
 						className='btn text-mirage p-4 font-rmsBold text-lg'
 					>
-						Read whitepaper
+						Read LitePaper
 					</a>
 				</div>
 
@@ -327,13 +343,6 @@ function LandingPage() {
 							<a
 								href=''
 								target={'_blank'}
-								className='py-3 px-6 border-2 rounded-2xl mr-[2%]'
-							>
-								Discord
-							</a>
-							<a
-								href=''
-								target={'_blank'}
 								className='p-3 border-2 rounded-2xl'
 							>
 								Twitter
@@ -349,7 +358,7 @@ function LandingPage() {
 							<a href=''>Homepage</a>
 							<a href=''>Faqs</a>
 							<a href={whitePaerLink} target={'_blank'}>
-								Whitepaper
+								LitePaper
 							</a>
 						</div>
 					</div>
