@@ -12,8 +12,31 @@ import Loader from '../General/Loader'
 import { ethers } from 'ethers'
 import { contractAddress, contractABI } from '../../Contract/contractDetails'
 import IsMintedContext from '../../contexts/IsMintedContext'
+import { useRef } from 'react'
+import html2canvas from 'html2canvas'
 
 function MintArea() {
+	const printRef = useRef()
+
+	const handleDownloadImage = async () => {
+		const element = printRef.current
+		const canvas = await html2canvas(element)
+		// console.log(canvas.current)
+		const data = canvas.toDataURL('image/jpg')
+		const link = document.createElement('a')
+
+		if (typeof link.download === 'string') {
+			link.href = data
+			link.download = 'image.jpg'
+
+			document.body.appendChild(link)
+			link.click()
+			document.body.removeChild(link)
+		} else {
+			window.open(data)
+		}
+	}
+
 	const [isConnected, setIsConnected] = useState(false)
 	const isWalletConnected = useContext(walletConnectedContext)
 	const isMintedContext = useContext(IsMintedContext)
@@ -28,6 +51,7 @@ function MintArea() {
 			}
 		}
 		checkConnection()
+		handleDownloadImage()
 	}, [])
 
 	useEffect(() => {
@@ -340,7 +364,7 @@ function MintArea() {
 					{/* <div className='h-[65%] w-[50%] absolute left-[25%] top-[10%] rounded-xl bg-black '></div> try for bg */}
 					<div className='bg-[#E1E3E0] h-[65%] w-[50%] absolute left-[25%] top-[10%] rounded-xl bg-gradient-to-tr '>
 						{/** pfp */}
-						<div className=' w-[30%] aspect-1 bg-black top-[8%] left-[6%] absolute rounded-full z-10 flex'>
+						<div className=' w-[30%] aspect-1 bg-black top-[8%] left-[6%] absolute rounded-full flex'>
 							<img
 								src='https://media.istockphoto.com/photos/close-of-blue-flower-picture-id177347141?k=20&m=177347141&s=612x612&w=0&h=AxMyktlycSIHfCEYAS5Act2xDLz5jCarSQl9jGJWjYo='
 								alt='uh oh'
@@ -364,7 +388,10 @@ function MintArea() {
 						{/** Bottom */}
 						<div className='h-[15%] w-full rounded-b-xl absolute bottom-0 flex'>
 							{/**arrow */}
-							<div className='image h-full aspect-1 bg-mirage rounded-bl-xl'>
+							<div
+								ref={printRef}
+								className='image h-full aspect-1 bg-mirage rounded-bl-xl'
+							>
 								<img
 									src={switchIcon}
 									className=' rotate-45 p-2'

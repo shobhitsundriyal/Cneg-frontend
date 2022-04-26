@@ -8,6 +8,7 @@ import wave1 from '../icons/LandingPageAssests/wave1.svg'
 import wave2 from '../icons/LandingPageAssests/wave2.svg'
 import lineCloud from '../icons/LandingPageAssests/lineCloud.svg'
 import sunSpike from '../icons/LandingPageAssests/sunSpike.svg'
+import rotatingEarth from '../icons/LandingPageAssests/rotatingEarth.gif'
 import logoOnlyWhite from '../icons/LandingPageAssests/logoOnlyWhiteNobg.png'
 
 import baseCarbon from '../icons/LandingPageAssests/baseCarbon.png'
@@ -24,7 +25,7 @@ function LandingPage() {
 	return (
 		<>
 			{/** Section 1 */}
-			<div className=' bg-dark_bg h-[100vh] mx-auto px-2 text-white font-rms font-semibold relative'>
+			<div className=' bg-dark_bg -[100vh] mx-auto px-2 text-white font-rms font-semibold relative'>
 				<div className='container h-[70%]'>
 					{/** header */}
 					<div className='flex pt-5 pb-3'>
@@ -34,15 +35,15 @@ function LandingPage() {
 						</button>
 					</div>
 					{/* main Area(hero section ) */}
-					<div className=' sm:flex mt-[5%] h-[90%]'>
+					<div className=' sm:flex mt-[5%] h-[90%] pb-40'>
 						{/** height of hero area */}
 						{/* left side */}
-						<div className=' flex flex-col w-[50%] justify-around '>
+						<div className=' flex flex-col w-[50%] justify-around space-y-12 '>
 							<div className=' text-7xl font-rmsBold leading-[110%]'>
 								These NFTs are going to save the planet{'  '}
 								<img
-									src={earth}
-									className='inline animate-spin'
+									src={rotatingEarth}
+									className='inline h-12'
 								/>
 							</div>
 							<div className=' text-lg'>
@@ -98,7 +99,7 @@ function LandingPage() {
 				{/** equivalant */}
 				<div className='container flex text-5xl justify-between text-white font-rmsBold mt-20 relative'>
 					{/** equals */}
-					<div className=' border-2 border-white aspect-1 w-8 sm:w-[6%] text-center absolute rounded-full bg-mirage p-2 left-[47%] top-[29%] 1016px:top-[25%] flex flex-col items-center justify-evenly py-[1.5%]'>
+					<div className=' border-2 border-white aspect-1 w-8 sm:w-[6%] text-center absolute rounded-full bg-mirage p-2 left-[45.5%] xs:left-[47%] top-[29%] 1016px:top-[25%] flex flex-col items-center justify-evenly py-[1.5%]'>
 						<div className='w-[70%] sm:w-[50%] aspect-5 bg-white'></div>
 						<div className='w-[70%] sm:w-[50%] aspect-5 bg-white'></div>
 					</div>
