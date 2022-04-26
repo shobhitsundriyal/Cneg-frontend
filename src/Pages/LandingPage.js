@@ -35,15 +35,15 @@ function LandingPage() {
 						</button>
 					</div>
 					{/* main Area(hero section ) */}
-					<div className=' sm:flex mt-[5%] h-[90%] pb-40'>
+					<div className=' md:flex mt-[5%] h-[90%] pb-24 sm:pb-40'>
 						{/** height of hero area */}
 						{/* left side */}
-						<div className=' flex flex-col w-[50%] justify-around space-y-12 '>
-							<div className=' text-7xl font-rmsBold leading-[110%]'>
+						<div className=' flex flex-col md:w-[50%] justify-around space-y-12 '>
+							<div className=' text-6xl 1016px:text-7xl font-rmsBold leading-[110%]'>
 								These NFTs are going to save the planet{'  '}
 								<img
 									src={rotatingEarth}
-									className='inline h-12'
+									className='inline h-10 1016px:h-12'
 								/>
 							</div>
 							<div className=' text-lg'>
@@ -56,8 +56,10 @@ function LandingPage() {
 							</div>
 						</div>
 						{/* right side */}
-						<div className='  w-[50%] pl-[12%]'>
-							<div className='h-[100%] bg-lavender rounded-2xl'></div>
+						<div className=' w-[80vw] sm:w-[70vw] md:w-[50%] md:pl-[12%] mx-auto md:mx-0 mt-20 md:mt-0 flex items-center'>
+							<div className='w-[100%] my-auto aspect-[21/22] bg-lavender rounded-2xl text-mirage'>
+								Image
+							</div>
 						</div>
 					</div>
 				</div>
