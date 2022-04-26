@@ -38,7 +38,7 @@ function MintArea() {
 			}
 		}
 		checkConnection()
-		handleDownloadImage()
+		// handleDownloadImage()
 	}, [])
 
 	useEffect(() => {
