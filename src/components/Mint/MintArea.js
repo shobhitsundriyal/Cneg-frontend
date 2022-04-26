@@ -14,27 +14,14 @@ import { contractAddress, contractABI } from '../../Contract/contractDetails'
 import IsMintedContext from '../../contexts/IsMintedContext'
 import { useRef } from 'react'
 import html2canvas from 'html2canvas'
+import { exportComponentAsJPEG } from 'react-component-export-image'
+import { SwitchHorizontalIcon } from '@heroicons/react/solid'
 
 function MintArea() {
 	const printRef = useRef()
 
 	const handleDownloadImage = async () => {
-		const element = printRef.current
-		const canvas = await html2canvas(element)
-		// console.log(canvas.current)
-		const data = canvas.toDataURL('image/jpg')
-		const link = document.createElement('a')
-
-		if (typeof link.download === 'string') {
-			link.href = data
-			link.download = 'image.jpg'
-
-			document.body.appendChild(link)
-			link.click()
-			document.body.removeChild(link)
-		} else {
-			window.open(data)
-		}
+		exportComponentAsJPEG(printRef).then((resp) => console.log(resp))
 	}
 
 	const [isConnected, setIsConnected] = useState(false)
@@ -351,6 +338,7 @@ function MintArea() {
 			<div className='md:w-[50%] w-full py-5'>
 				<div
 					className={`bg-lavender w-[87%] aspect-w-5 aspect-h-[5.1] rounded-xl relative mx-auto md:mx-0`}
+					ref={printRef}
 				>
 					{/**cylinder */}
 					<div className='h-[20%] w-[90%] bg-gradient-to-l from-[#ECE9F3] to-[#DDDFE5] absolute left-[5%] top-[80%]'></div>
@@ -362,7 +350,10 @@ function MintArea() {
 
 					{/**Card */}
 					{/* <div className='h-[65%] w-[50%] absolute left-[25%] top-[10%] rounded-xl bg-black '></div> try for bg */}
-					<div className='bg-[#E1E3E0] h-[65%] w-[50%] absolute left-[25%] top-[10%] rounded-xl bg-gradient-to-tr '>
+					<div
+						className='bg-[#E1E3E0] h-[65%] w-[50%] absolute left-[25%] top-[10%] rounded-xl bg-gradient-to-tr'
+						// ref={printRef}
+					>
 						{/** pfp */}
 						<div className=' w-[30%] aspect-1 bg-black top-[8%] left-[6%] absolute rounded-full flex'>
 							<img
@@ -388,14 +379,12 @@ function MintArea() {
 						{/** Bottom */}
 						<div className='h-[15%] w-full rounded-b-xl absolute bottom-0 flex'>
 							{/**arrow */}
-							<div
-								ref={printRef}
-								className='image h-full aspect-1 bg-mirage rounded-bl-xl'
-							>
-								<img
+							<div className='image h-full aspect-1 bg-mirage rounded-bl-xl'>
+								{/* <img
 									src={switchIcon}
 									className=' rotate-45 p-2'
-								/>
+								/> */}
+								<SwitchHorizontalIcon className=' text-white rotate-45 p-2' />
 							</div>
 							{/** little info */}
 							{/** text fix maybe required */}
