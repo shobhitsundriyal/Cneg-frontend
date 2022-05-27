@@ -15,6 +15,7 @@ import baseCarbon from '../icons/LandingPageAssests/baseCarbon.png'
 import StepsBubble from '../components/LandingPage/SetpsBubble'
 import solidCloudGroup from '../icons/LandingPageAssests/solidCloudGroup.svg'
 import dropping from '../icons/LandingPageAssests/dropping.svg'
+import heroImg from '../icons/LandingPageAssests/cnegcardwebsite.png'
 import FaqSection from '../components/Mint/FaqSection'
 import { CheckCircleIcon } from '@heroicons/react/solid'
 
@@ -47,7 +48,7 @@ function LandingPage() {
 								/>
 							</div>
 							<div className=' text-lg'>
-								With C-negative, you can buy carbon credits and
+								With Cnegative, you can buy carbon credits and
 								burn them on the blockchain - leaving the world
 								with less permitted carbon emissions.
 							</div>
@@ -57,8 +58,8 @@ function LandingPage() {
 						</div>
 						{/* right side */}
 						<div className=' w-[80vw] sm:w-[70vw] md:w-[50%] md:pl-[12%] mx-auto md:mx-0 mt-20 md:mt-0 flex items-center'>
-							<div className='w-[100%] my-auto aspect-[21/22] bg-lavender rounded-2xl text-mirage'>
-								Image
+							<div className='w-[100%] my-auto aspect-[21/22] rounded-2xl text-mirage justify-center md:justify-end flex'>
+								<img src={heroImg} className=' max-h-[100vw]' />
 							</div>
 						</div>
 					</div>
@@ -66,11 +67,11 @@ function LandingPage() {
 
 				<img
 					src={sideDoodle}
-					className='absolute -bottom-1 left-0 w-[14.5vw]'
+					className='absolute bottom-0 md:-bottom-1 left-0 w-[14.5vw]'
 				/>
 				<img
 					src={sideDoodle}
-					className='absolute -bottom-1 right-0 w-[14.5vw]'
+					className='absolute bottom-0 md:-bottom-1 right-0 w-[14.5vw]'
 					style={{ transform: 'rotateY(180deg)' }}
 				/>
 			</div>
@@ -81,7 +82,7 @@ function LandingPage() {
 					<div className='text-6xl font-rmsBold w-min leading-[110%] mt-10 text-center sm:text-left mx-auto md:w-fit lg:w-min'>
 						What is a Cnegative NFT?
 						<div className='text-lg leading-[160%] tracking-wider text-center sm:text-left hidden sm:block lg:hidden font-rms mt-20 ml-3'>
-							A C-negative NFT allows you to purchase carbon
+							A Cnegative NFT allows you to purchase carbon
 							credits on the blockchain and destroy them forever -
 							meaning, that the world has lesser amount of
 							permitted carbon emissions.
@@ -92,9 +93,9 @@ function LandingPage() {
 					</div>
 
 					<div className=' text-lg leading-[160%] mb-12 mt-auto tracking-wider text-center sm:text-left sm:hidden lg:block'>
-						A C-negative NFT allows you to purchase carbon credits
-						on the blockchain and destroy them forever - meaning,
-						that the world has lesser amount of permitted carbon
+						A Cnegative NFT allows you to purchase carbon credits on
+						the blockchain and destroy them forever - meaning, that
+						the world has lesser amount of permitted carbon
 						emissions.
 					</div>
 				</div>
@@ -118,7 +119,7 @@ function LandingPage() {
 
 					<div className='w-[49.5%] bg-mirage flex items-center p-4 px-2 sm:p-6 1016px:p-8 rounded-2xl justify-end text-[1.1rem] sm:text-3xl md:text-4xl 1016px:text-5xl	'>
 						<div className='mr-2 md:mr-8 text-right'>
-							96 Base
+							24 Base
 							<br /> Carbon Tonne
 						</div>
 						<div className=' bg-lavender rounded-full h-9 sm:h-14 md:h-16 1016px:h-20 aspect-1'>
@@ -176,7 +177,7 @@ function LandingPage() {
 						<StepsBubble
 							title={'Buy'}
 							description={
-								'When you buy a CNeg NFT, 50,000 USD worth BCT tokens enter the C-negative Protocol, making them inaccessible to everyone.'
+								'When you buy a Cnegative NFT, 24 BCT tokens enter the Cnegative Protocol, making them inaccessible to everyone.'
 							}
 						/>
 						<StepsBubble
@@ -188,7 +189,7 @@ function LandingPage() {
 						<StepsBubble
 							title={'Save the Planet.'}
 							description={
-								'Buying 1 C-negative protocol is the equivalent of an individual from the top 1% income bracket becoming carbon negative for a year. 10% of the mint value of each C-negative token will be contributed towards verified carbon capture projects. '
+								'Buying 1 Cnegative protocol is the equivalent of an individual from the top 1% income bracket becoming carbon negative for 18 months. '
 							}
 						/>
 					</div>
@@ -216,7 +217,9 @@ function LandingPage() {
 						<div className='absolute bg-light_pink h-[70%] w-[50%] rounded-3xl mr-[16%] mb-[2%] -z-10'></div>
 						<img
 							src={section4Image}
+							// src={heroImg}
 							alt='noImg'
+							// className='h-[70%]'
 							className='h-[90%]'
 						/>
 					</div>
@@ -227,17 +230,21 @@ function LandingPage() {
 						</div>
 						<div className='text-lg space-y-3 ml-[5%] md:ml-[8%]'>
 							<div className='flex items-center'>
-								<CheckCircleIcon className='h-8 text-lavender mr-[2%]' />
-								Be a part of the C-negative DAO{' '}
+								<CheckCircleIcon className='h-8 w-8 text-lavender mr-[2%]' />
+								Take your first step towards Climate Action{' '}
 							</div>
 							<div className='flex items-center'>
-								<CheckCircleIcon className='h-8 text-lavender mr-[2%]' />
-								Become carbon neutral for 10 years
+								<CheckCircleIcon className='h-8 w-8 text-lavender mr-[2%]' />
+								Become carbon neutral for 18 months{' '}
 							</div>
-							<div className='flex items-center'>
-								<CheckCircleIcon className='h-8 text-lavender mr-[2%]' />
-								Participate in the development of verified
-								climate projects
+							<div className='flex sm:items-center items-start'>
+								<div className='mr-[2%]'>
+									<CheckCircleIcon className='h-8 text-lavender' />
+								</div>
+								<div>
+									Participate in the development of verified
+									climate projects
+								</div>
 							</div>
 						</div>
 					</div>
@@ -287,7 +294,7 @@ function LandingPage() {
 						</div>
 						<a href={whitePaerLink} target='_blank'>
 							<div className='bg-white rounded-xl w-max text-base px-4 py-3 md:py-4 mt-4'>
-								Read LitePaper
+								Read Litepaper
 							</div>
 						</a>
 					</div>
@@ -328,7 +335,7 @@ function LandingPage() {
 						target='_blank'
 						className='btn text-mirage p-2 sm:px-4 sm:py-3 md:py-4 font-rmsBold text-base md:text-lg'
 					>
-						Read LitePaper
+						Read Litepaper
 					</a>
 				</div>
 
@@ -369,7 +376,7 @@ function LandingPage() {
 							<a href=''>Homepage</a>
 							<a href=''>Faqs</a>
 							<a href={whitePaerLink} target={'_blank'}>
-								LitePaper
+								Litepaper
 							</a>
 						</div>
 					</div>
