@@ -22,7 +22,7 @@ import { CheckCircleIcon } from '@heroicons/react/solid'
 function LandingPage() {
 	const arr = new Array(50).fill(0)
 	const whitePaerLink =
-		'https://www.figma.com/proto/ucqPiWfTJecEifVRhTNNyn/C-NEGATIVE?node-id=734%3A273&scaling=min-zoom&page-id=339%3A341'
+		'https://www.figma.com/proto/l7staAh3JZhLULA8XNSPmF/C-Negative-(Spacekayak)?node-id=734%3A273&scaling=min-zoom&page-id=339%3A341'
 	return (
 		<>
 			{/** Section 1 */}
