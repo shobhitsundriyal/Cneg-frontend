@@ -30,15 +30,13 @@ function LandingPage() {
 			<div className=' bg-dark_bg -[100vh] mx-auto px-2 text-white font-rms font-semibold relative'>
 				<div className='container h-[70%]'>
 					{/** header */}
-					<div className='flex pt-5 pb-3'>
+					<div className='flex pt-5 pb-3 justify-between'>
 						<img src={logoWhite} alt='' />
-						<div classname='ml-auto'>
 						<Link to="/mint">
 							<button className='btn ml-auto text-mirage font-rmsBold'>
-								Mint your's
+								Mint yours
 							</button>
 						</Link>
-						</div>
 					</div>
 					{/* main Area(hero section ) */}
 					<div className=' md:flex mt-[5%] h-[90%] pb-24 sm:pb-40'>
