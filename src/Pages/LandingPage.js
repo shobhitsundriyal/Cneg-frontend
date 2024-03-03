@@ -18,6 +18,7 @@ import dropping from '../icons/LandingPageAssests/dropping.svg'
 import heroImg from '../icons/LandingPageAssests/cnegcardwebsite.png'
 import FaqSection from '../components/Mint/FaqSection'
 import { CheckCircleIcon } from '@heroicons/react/solid'
+import { Link } from "react-router-dom";
 
 function LandingPage() {
 	const arr = new Array(50).fill(0)
@@ -31,9 +32,11 @@ function LandingPage() {
 					{/** header */}
 					<div className='flex pt-5 pb-3'>
 						<img src={logoWhite} alt='' />
-						<button className='btn ml-auto text-mirage font-rmsBold'>
-							Coming Soon
-						</button>
+						<Link to="/mint">
+							<button className='btn ml-auto text-mirage font-rmsBold'>
+								Mint your's
+							</button>
+						</Link>
 					</div>
 					{/* main Area(hero section ) */}
 					<div className=' md:flex mt-[5%] h-[90%] pb-24 sm:pb-40'>
@@ -52,9 +55,11 @@ function LandingPage() {
 								burn them on the blockchain - leaving the world
 								with less permitted carbon emissions.
 							</div>
-							<div className='btn text-mirage font-rmsBold w-max p-3'>
-								Coming Soon
-							</div>
+							<Link to="/mint">
+								<div className='btn text-mirage font-rmsBold w-max p-3'>
+									Mint Your NFT
+								</div>
+							</Link>
 						</div>
 						{/* right side */}
 						<div className=' w-[80vw] sm:w-[70vw] md:w-[50%] md:pl-[12%] mx-auto md:mx-0 mt-20 md:mt-0 flex items-center'>
